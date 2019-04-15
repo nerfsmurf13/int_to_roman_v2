@@ -1,0 +1,100 @@
+* {
+  font-family: "Cinzel", serif;
+  padding: 0px;
+  margin: 0px;
+  font-size: 1.3rem;
+}
+
+.wrapper {
+  background-color: lightgray;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 4fr 1fr;
+      grid-template-columns: 1fr 4fr 1fr;
+  grid-auto-rows: minmax(100px, auto);
+  -webkit-column-gap: 1em;
+          column-gap: 1em;
+  row-gap: 1em;
+      grid-template-areas: ". gHeader ." ". gInput ." ". gResults ." ". gFooter .";
+}
+
+.header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: gHeader;
+  background-color: lightgreen;
+  padding: 30px;
+}
+
+.header h1 {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.input {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: gInput;
+  text-align: center;
+  background-color: yellow;
+  padding: 30px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 1fr 1fr;
+      grid-template-areas: "ggformtext ggformsubmit" "ggformtext ggformclear";
+}
+
+.results {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: gResults;
+  background-color: red;
+  text-align: center;
+  padding: 30px;
+}
+
+.footer {
+  font-family: "Marvel", sans-serif;
+  -ms-grid-row: 4;
+  -ms-grid-column: 2;
+  grid-area: gFooter;
+  background-color: lightblue;
+  text-align: center;
+  padding: 30px;
+}
+
+.formtext {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: ggformtext;
+  background-color: aliceblue;
+}
+
+.formtext input[type="text"] {
+  height: 100%;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.formsubmit {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: ggformsubmit;
+}
+
+.formclear {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: ggformclear;
+}
+
+button {
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+}
+/*# sourceMappingURL=styles.css.map */
