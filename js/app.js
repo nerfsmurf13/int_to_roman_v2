@@ -14,6 +14,16 @@ console.log("test");
 
 num = 1234;
 
+let enteredInt = 1991;
+
+document.getElementById("domsubmit").addEventListener("click", domsubmit);
+
+function domsubmit() {
+	console.log("Clicked");
+	let val = document.getElementById("domtextbox").value;
+	document.getElementById("calcinput").innerText = val;
+}
+
 var intToRoman = function(num) {
 	//Convert Int => String
 	var input = "" + num;
