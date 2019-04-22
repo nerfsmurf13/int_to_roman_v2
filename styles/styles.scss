@@ -6,37 +6,38 @@
 }
 
 .wrapper {
+    height: 100vh;
     background-color: lightgray;
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
     grid-auto-rows: minmax(100px, auto);
-    column-gap: 1em;
-    row-gap: 1em;
     grid-template-areas:
+        ". . ."
         ". gHeader ."
         ". gInput ."
         ". gResults ."
-        ". gFooter .";
+        ". gFooter ."
+        ". . .";
+    align-items: center;
+    text-align: center;
 }
 
 .header {
     grid-area: gHeader;
-    background-color: lightgreen;
+    //background-color: lightgreen;
 
     h1 {
         text-align: center;
         font-size: 1.5rem;
     }
 
-    padding: 30px;
 }
 
 .input {
+    padding: 10px;
     grid-area: gInput;
     column-gap: 2%;
-    text-align: center;
-    background-color: yellow;
-    padding: 30px;
+    //background-color: yellow;
     display: grid;
     grid-template-columns: 3fr 1fr;
     grid-auto-rows: 1fr 1fr;
@@ -47,17 +48,13 @@
 
 .results {
     grid-area: gResults;
-    background-color: red;
-    text-align: center;
-    padding: 30px;
+    //background-color: red;
 }
 
 .footer {
     font-family: "Marvel", sans-serif;
     grid-area: gFooter;
-    background-color: lightblue;
-    text-align: center;
-    padding: 30px;
+    //background-color: lightblue;
 }
 
 .formtext {

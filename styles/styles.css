@@ -6,24 +6,24 @@
 }
 
 .wrapper {
+  height: 100vh;
   background-color: lightgray;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 4fr 1fr;
       grid-template-columns: 1fr 4fr 1fr;
   grid-auto-rows: minmax(100px, auto);
-  -webkit-column-gap: 1em;
-          column-gap: 1em;
-  row-gap: 1em;
-      grid-template-areas: ". gHeader ." ". gInput ." ". gResults ." ". gFooter .";
+      grid-template-areas: ". . ." ". gHeader ." ". gInput ." ". gResults ." ". gFooter ." ". . .";
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
 }
 
 .header {
-  -ms-grid-row: 1;
+  -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: gHeader;
-  background-color: lightgreen;
-  padding: 30px;
 }
 
 .header h1 {
@@ -32,14 +32,12 @@
 }
 
 .input {
-  -ms-grid-row: 2;
+  padding: 10px;
+  -ms-grid-row: 3;
   -ms-grid-column: 2;
   grid-area: gInput;
   -webkit-column-gap: 2%;
           column-gap: 2%;
-  text-align: center;
-  background-color: yellow;
-  padding: 30px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 3fr 1fr;
@@ -49,22 +47,16 @@
 }
 
 .results {
-  -ms-grid-row: 3;
+  -ms-grid-row: 4;
   -ms-grid-column: 2;
   grid-area: gResults;
-  background-color: red;
-  text-align: center;
-  padding: 30px;
 }
 
 .footer {
   font-family: "Marvel", sans-serif;
-  -ms-grid-row: 4;
+  -ms-grid-row: 5;
   -ms-grid-column: 2;
   grid-area: gFooter;
-  background-color: lightblue;
-  text-align: center;
-  padding: 30px;
 }
 
 .formtext {
