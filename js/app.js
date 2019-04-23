@@ -10,19 +10,26 @@
 // X can be placed before L (50) and C (100) to make 40 and 90.
 // C can be placed before D (500) and M (1000) to make 400 and 900.
 //Input is guaranteed to be within the range from 1 to 3999.
-console.log("test");
+console.log("JS Initialized");
 
 num = 1234;
 
 let enteredInt = 1991;
+let errorMessage = "";
 
 document.getElementById("domsubmit").addEventListener("click", domsubmit);
 document.getElementById("domclear").addEventListener("click", domclear);
 
+const errorFade = () => {
+	document.getElementById("error-message").innerText = "";
+};
+
 function domclear() {
 	document.getElementById("calcoutput").innerText = "--";
-	document.getElementById("calcinput").innerText = "--";
+	//document.getElementById("calcinput").innerText = "--";
 	document.getElementById("domtextbox").value = "";
+	document.getElementById("error-message").innerText = "Input/Output Cleared!";
+	setTimeout(errorFade, 2000);
 }
 
 function domsubmit() {
@@ -110,8 +117,15 @@ function domsubmit() {
 		console.log(romNum);
 		return romNum;
 	};
-	document.getElementById("calcoutput").innerText = intToRoman(val);
-	document.getElementById("calcinput").innerText = val;
+
+	if (val > 0 && val < 4000) {
+		document.getElementById("calcoutput").innerText = intToRoman(val);
+		//document.getElementById("calcinput").innerText = val;
+	} else {
+		document.getElementById("error-message").innerText =
+			"Must be a number between 1-3999";
+		setTimeout(errorFade, 2000);
+	}
 }
 
 // var intToRoman = function(num) {

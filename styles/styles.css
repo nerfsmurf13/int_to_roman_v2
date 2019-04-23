@@ -1,43 +1,63 @@
 * {
   font-family: "Cinzel", serif;
-  padding: 0px;
   margin: 0px;
   font-size: 1.3rem;
 }
 
-.wrapper {
-  height: 100vh;
+* a {
+  text-decoration: none;
+  color: black;
+}
+
+* button {
+  border: 0;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+  margin: 0px 0px;
+}
+
+* button:hover {
   background-color: lightgray;
+}
+
+* button:active {
+  background-color: black;
+  color: white;
+}
+
+.wrapper {
+  background-color: lightblue;
+  height: 100vh;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 4fr 1fr;
       grid-template-columns: 1fr 4fr 1fr;
   grid-auto-rows: minmax(100px, auto);
-      grid-template-areas: ". . ." ". gHeader ." ". gInput ." ". gResults ." ". gFooter ." ". . .";
+      grid-template-areas: ". gHeader ." ". gInput ." ". gResults ." ". gControls ." ". gFooter .";
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
 }
 
-.header {
-  -ms-grid-row: 2;
+.wrapper .header {
+  -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: gHeader;
 }
 
-.header h1 {
+.wrapper .header h1 {
   text-align: center;
   font-size: 1.5rem;
 }
 
-.input {
-  padding: 10px;
-  -ms-grid-row: 3;
+.wrapper .input {
+  padding: 0px;
+  -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: gInput;
-  -webkit-column-gap: 2%;
-          column-gap: 2%;
+  grid-gap: 10px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 3fr 1fr;
@@ -46,52 +66,103 @@
       grid-template-areas: "ggformtext ggformsubmit" "ggformtext ggformclear";
 }
 
-.results {
-  -ms-grid-row: 4;
+.wrapper .input .formtext {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: ggformtext;
+  background-color: aliceblue;
+  margin: 0px;
+}
+
+.wrapper .input .formtext input[type="text"] {
+  border: 0px;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+.wrapper .results {
+  -ms-grid-row: 3;
   -ms-grid-column: 2;
   grid-area: gResults;
 }
 
-.footer {
+.wrapper .controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-grid-row: 4;
+  -ms-grid-column: 2;
+  grid-area: gControls;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.wrapper .controls button {
+  width: 200px;
+  height: 78px;
+}
+
+.wrapper .footer {
   font-family: "Marvel", sans-serif;
   -ms-grid-row: 5;
   -ms-grid-column: 2;
   grid-area: gFooter;
 }
 
-.formtext {
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
-  -ms-grid-column: 1;
-  grid-area: ggformtext;
-  background-color: aliceblue;
-}
-
-.formtext input[type="text"] {
-  height: 100%;
-  width: 100%;
-  font-size: 2rem;
-  text-align: center;
-  padding: 0;
-  margin: 0;
-}
-
-.formsubmit {
+.wrapper .formsubmit {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: ggformsubmit;
 }
 
-.formclear {
+.wrapper .formclear {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: ggformclear;
 }
 
-button {
-  padding: 0px;
-  width: 100%;
-  height: 100%;
-  margin: 0px;
+@media only screen and (max-width: 750px) {
+  .wrapper {
+    -ms-grid-columns: 5% 1fr 5%;
+        grid-template-columns: 5% 1fr 5%;
+    background-color: lightblue;
+        grid-template-areas: ". gHeader ." ". gInput ." ". gResults ." ". gControls ." ". gFooter .";
+  }
+  .wrapper .input {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: gInput;
+    grid-gap: 10px;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 1fr 1fr;
+        grid-template-areas: "ggformtext ggformtext" "ggformsubmit ggformclear";
+  }
+  .wrapper .input button {
+    border: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+  }
+  .wrapper .input .formtext {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: ggformtext;
+    margin: 0px;
+  }
+  .controls {
+    -ms-grid-row: 4;
+    -ms-grid-column: 2;
+    grid-area: gControls;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
